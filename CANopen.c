@@ -63,8 +63,12 @@
 #elif OD_CNT_HB_CONS < 0 || OD_CNT_HB_CONS > 1
  #error OD_CNT_HB_CONS from OD.h not correct!
 #endif
-#if ((CO_CONFIG_HB_CONS) & CO_CONFIG_HB_CONS_ENABLE) && OD_CNT_HB_CONS == 1
+#if ((CO_CONFIG_HB_CONS) & CO_CONFIG_HB_CONS_ENABLE) && OD_CNT_HB_CONS > 0
+#if OD_CNT_HB_CONS > CO_CONFIG_HB_CONS_SIZE
  #define CO_RX_CNT_HB_CONS CO_CONFIG_HB_CONS_SIZE
+#else
+#define CO_RX_CNT_HB_CONS OD_CNT_HB_CONS
+#endif
 #else
  #define CO_RX_CNT_HB_CONS 0
 #endif
