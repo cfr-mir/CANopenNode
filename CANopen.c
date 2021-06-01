@@ -80,6 +80,7 @@
  #define OD_ENTRY_H1003 NULL
 #endif
 #if (CO_CONFIG_EM) & CO_CONFIG_EM_PRODUCER
+#define OD_CNT_EM_PROD 1
  #if OD_CNT_EM_PROD == 1
   #define CO_TX_CNT_EM_PROD OD_CNT_EM_PROD
  #else
